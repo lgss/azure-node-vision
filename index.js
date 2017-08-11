@@ -17,7 +17,8 @@ msRestAzure.loginWithServicePrincipalSecret(
   '213af4b4-a03f-4b00-8fc2-c192df40c613',
   (err, credentials) => {
     if (err) throw err
-
+//https://azure.github.io/azure-sdk-for-node/global.html#createARMStorageManagementClient
+////https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md
     let storageClient = Azure.createASMStoreManagementClient(credentials, '213af4b4-a03f-4b00-8fc2-c192df40c613');
     console.log(storageClient);
     // ..use the client instance to manage service resources.
