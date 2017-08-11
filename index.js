@@ -11,6 +11,14 @@ const CognitiveServicesManagement = require("azure-arm-cognitiveservices");
 // Interactive Login 
 // It provides a url and code that needs to be copied and pasted in a browser and authenticated over there. If successful,  
 // the user will get a DeviceTokenCredentials object. 
+// 
+// Notes:
+// Had a problem with authentication with 'interactive login' due to
+// this error:
+// https://stackoverflow.com/questions/39367820/errorinvalidauthenticationtokentenant-the-access-token-is-from-the-wrong-issue
+// starting trying Service Principal login 
+
+
 msRestAzure.loginWithServicePrincipalSecret(
   '*****put stuff in here according to linked docs below*****',
   '*****put stuff in here according to linked docs below*****',
