@@ -12,9 +12,9 @@ const CognitiveServicesManagement = require("azure-arm-cognitiveservices");
 // It provides a url and code that needs to be copied and pasted in a browser and authenticated over there. If successful,  
 // the user will get a DeviceTokenCredentials object. 
 msRestAzure.loginWithServicePrincipalSecret(
-  'a0923c32-1b7f-41bc-aea2-19cc2d81ec02',
-  '8958a04d-2fe0-492b-9619-b0e2bf007e83',
-  '213af4b4-a03f-4b00-8fc2-c192df40c613',
+  '*****put stuff in here according to linked docs below*****',
+  '*****put stuff in here according to linked docs below*****',
+  '*****put stuff in here according to linked docs below*****',
   (err, credentials) => {
     if (err) throw err
 //https://azure.github.io/azure-sdk-for-node/global.html#createARMStorageManagementClient
