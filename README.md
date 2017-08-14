@@ -1,18 +1,10 @@
-# azure-node-vision
-
-Work in progress - upload an image, 
-
-Done
-- Show a file upload
-- Upload file
-- Authenticate with azure 
-- make a call to azure image recognition service
-
 $project
 ========
 
-$project will solve your problem of where to start with documentation,
-by providing a basic explanation of how to do it easily.
+$project Work in progress - upload an image, 
+- Show a file upload form
+- Upload file
+- make a call to azure image recognition service
 
 Look how easy it is to use:
 
