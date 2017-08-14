@@ -1,39 +1,12 @@
+require('dotenv').config()
+var request = require('request');
 var path = require('path');
 var formidable = require('formidable');
 var fs = require('fs');
 var static = require('node-static');
 var express = require('express');
-
-const Azure = require('azure');
-const msRestAzure = require('ms-rest-azure');
-const CognitiveServicesManagement = require("azure-arm-cognitiveservices");
-
-// Interactive Login 
-// It provides a url and code that needs to be copied and pasted in a browser and authenticated over there. If successful,  
-// the user will get a DeviceTokenCredentials object. 
-// 
-// Notes:
-// Had a problem with authentication with 'interactive login' due to
-// this error:
-// https://stackoverflow.com/questions/39367820/errorinvalidauthenticationtokentenant-the-access-token-is-from-the-wrong-issue
-// starting trying Service Principal login 
-
-
-msRestAzure.loginWithServicePrincipalSecret(
-  '*****put stuff in here according to linked docs below*****',
-  '*****put stuff in here according to linked docs below*****',
-  '*****put stuff in here according to linked docs below*****',
-  (err, credentials) => {
-    if (err) throw err
-//https://azure.github.io/azure-sdk-for-node/global.html#createARMStorageManagementClient
-////https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md
-    let storageClient = Azure.createASMStoreManagementClient(credentials, '213af4b4-a03f-4b00-8fc2-c192df40c613');
-    console.log(storageClient);
-    // ..use the client instance to manage service resources.
-  }
-);
-
-
+// var cognitiveServices = require('cognitive-services');
+//https://www.npmjs.com/package/cognitive-services
 var app = express();
 
 var dir = path.join(__dirname, 'public');
@@ -67,7 +40,40 @@ app.listen(3000, function() {
                 });
 
                 res.write('<img src="' + files.filetoupload.name + '"/>');
+
                 res.end();
+
+
+                var formData = {
+                    // Pass data via Streams 
+                    my_file: fs.createReadStream(newpath),
+                };
+
+
+                request.post(
+                    'https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories&language=en',
+
+                    // body: {'files':'http://localhost:3000/'+ files.filetoupload.name}, 
+                    {
+                        headers: {
+                            'Host': 'westeurope.api.cognitive.microsoft.com',
+                            'Content-Type': 'application/json',
+                            'Ocp-Apim-Subscription-Key': process.env.API_KEY
+                        },
+                        formData: formData
+                    },
+
+                    function(error, response, body) {
+                        console.log(response);
+                        if (!error && response.statusCode == 200) {
+                            console.log(body.categories);
+                        }
+                    }
+
+                );
+
+
+
             });
         });
     });
