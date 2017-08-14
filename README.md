@@ -1,10 +1,12 @@
-$project
+$project = azure-node-vision
 ========
 
-$project Work in progress - upload an image, 
+$project 
+
 - Show a file upload form
 - Upload file
 - make a call to azure image recognition service
+- Receives data back from cognitive api service
 
 Look how easy it is to use:
 
@@ -23,7 +25,8 @@ Installation
 
 Install $project by running:
 
-    install project
+    npm install
+    nodemon index.js
 
 Contribute
 ----------
