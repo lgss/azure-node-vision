@@ -1,12 +1,12 @@
-$project = azure-node-vision
+Azure-node-vision
 ========
 
-$project 
+## What this does:
 
-- Show a file upload form
-- Upload file
-- make a call to azure image recognition service
-- Receives data back from cognitive api service
+- Shows a file upload form
+- You upload an image file
+- Script makes a call to azure image recognition service
+- Data is received back from cognitive api service
 
 Look how easy it is to use:
 
