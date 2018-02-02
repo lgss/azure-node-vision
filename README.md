@@ -8,6 +8,11 @@ Azure-node-vision
 - Script makes a call to azure image recognition service
 - Data is received back from cognitive api service
 
+Prerequesites
+-------------
+
+You will need an API KEY - put yours inside .env file
+
 Installation
 ------------
 
