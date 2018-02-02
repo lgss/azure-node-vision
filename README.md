@@ -11,13 +11,13 @@ Azure-node-vision
 Prerequisites
 -------------
 
-You will need an API KEY - put yours inside .env file
-Information about Azure computer vision API https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/
-Try it out on Microsoft website https://azure.microsoft.com/en-gb/try/cognitive-services/?api=computer-vision
-Get your free account https://azure.microsoft.com/en-gb/free/ 
-Sign into the dashboard https://portal.azure.com/
-
-
+- You will need an API KEY - put yours inside .env file
+- Information about Azure computer vision API https://azure.microsoft.com/en-gb/services/cognitive-services/computer-vision/
+- Try it out on Microsoft website https://azure.microsoft.com/en-gb/try/cognitive-services/?api=computer-vision
+- Get your free account https://azure.microsoft.com/en-gb/free/ 
+- Sign into the dashboard https://portal.azure.com/
+- Get API Key https://docs.microsoft.com/en-us/azure/cognitive-services/Computer-vision/Vision-API-How-to-Topics/HowToSubscribe
+- If you have problems getting the API Key let me know and we can have a look together
 
 Installation
 ------------
