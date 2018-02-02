@@ -40,19 +40,15 @@ app.listen(3000, function() {
                 });
 
                 res.write('<img src="' + files.filetoupload.name + '"/>');
-
                 res.end();
-
 
                 var formData = {
                     // Pass data via Streams 
                     my_file: fs.createReadStream(newpath),
                 };
 
-
                 request.post(
                     'https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze?visualFeatures=Categories&language=en',
-
                     // body: {'files':'http://localhost:3000/'+ files.filetoupload.name}, 
                     {
                         headers: {
@@ -62,18 +58,13 @@ app.listen(3000, function() {
                         },
                         formData: formData
                     },
-
                     function(error, response, body) {
                         console.log(response);
                         if (!error && response.statusCode == 200) {
                             console.log(body.categories);
                         }
                     }
-
                 );
-
-
-
             });
         });
     });
